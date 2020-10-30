@@ -72,6 +72,18 @@
                                 </connections>
                             </view>
 
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBQ-Ak-DzX">
+                                <rect key="frame" x="162.5" y="488" width="50" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="0Qk-Pl-16w"/>
+                                    <constraint firstAttribute="width" constant="50" id="DYC-NQ-6jQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Balham" family="Balham" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+
+
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBR-ol-fW3">
                                 <rect key="frame" x="223" y="604" width="30" height="21"/>
                                 <constraints>
@@ -108,6 +120,7 @@
                                 </connections>
                             </button>
 
+
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rAv-0b-a0n"/>
                         <color key="backgroundColor" red="0.3417147398" green="0.41966140270000002" blue="0.50811702010000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -122,12 +135,20 @@
                             <constraint firstItem="Uex-6d-wLd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="K6P-Lo-rYa">
                                 <variation key="heightClass=regular-widthClass=regular" constant="40"/>
                             </constraint>
+
+                            <constraint firstItem="IBQ-Ak-DzX" firstAttribute="centerY" secondItem="Uex-6d-wLd" secondAttribute="centerY" id="USS-m9-pNJ"/>
+                            <constraint firstItem="IBQ-Ak-DzX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="165" id="Uj0-rp-P6Y"/>
+                            <constraint firstItem="IBQ-Ak-DzX" firstAttribute="centerX" secondItem="zqO-TY-dE8" secondAttribute="centerX" id="Uus-D2-k9z"/>
+                            <constraint firstItem="Uex-6d-wLd" firstAttribute="centerX" secondItem="rAv-0b-a0n" secondAttribute="centerX" constant="100" id="VVS-s1-6MU"/>
+                            <constraint firstItem="IBQ-Ak-DzX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lEl-UQ-cjj"/>
+
                             <constraint firstItem="JBR-ol-fW3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="50.5" id="POn-CL-zQU"/>
                             <constraint firstItem="Uex-6d-wLd" firstAttribute="centerX" secondItem="rAv-0b-a0n" secondAttribute="centerX" constant="100" id="VVS-s1-6MU"/>
 
                             <constraint firstItem="8YA-PE-Rtq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-11.5" id="bXf-dR-9Ye"/>
 
                             <constraint firstItem="ske-tD-TS2" firstAttribute="top" secondItem="rAv-0b-a0n" secondAttribute="top" constant="42" id="gkv-K3-b6Q"/>
+
 
                             <constraint firstItem="zqO-TY-dE8" firstAttribute="top" secondItem="rAv-0b-a0n" secondAttribute="top" constant="42" id="nbq-PX-9z4">
                                 <variation key="heightClass=compact" constant="87"/>
@@ -137,12 +158,18 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="USS-m9-pNJ"/>
+                                <exclude reference="Uus-D2-k9z"/>
                                 <exclude reference="VVS-s1-6MU"/>
                                 <exclude reference="vTg-Ph-dba"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
+                                <include reference="USS-m9-pNJ"/>
+                                <exclude reference="Uj0-rp-P6Y"/>
+                                <include reference="Uus-D2-k9z"/>
+                                <exclude reference="lEl-UQ-cjj"/>
                                 <exclude reference="8l7-Kz-3xT"/>
                                 <include reference="VVS-s1-6MU"/>
                                 <exclude reference="vTg-Ph-dba"/>
@@ -157,11 +184,16 @@
                         <outlet property="newGameButton" destination="ske-tD-TS2" id="aRK-8E-lfO"/>
 
                         <outlet property="questionView" destination="Uex-6d-wLd" id="V5W-6j-D0K"/>
+                        <outlet property="scoreLabel" destination="IBQ-Ak-DzX" id="FFP-vm-Thn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+
+            <point key="canvasLocation" x="138.98050974512745" y="103.2"/>
+
             <point key="canvasLocation" x="138.40000000000001" y="103.89805097451276"/>
+
         </scene>
     </scenes>
     <resources>

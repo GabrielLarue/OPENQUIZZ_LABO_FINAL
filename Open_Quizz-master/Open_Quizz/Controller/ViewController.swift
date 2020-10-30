@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var questionView: QuestionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
+    @IBOutlet weak var scoreLabel: UILabel!
+
+
     @IBOutlet weak var incorrectLabel: UILabel!
     
     var scoreIncorrect: Int = 0 {
@@ -33,12 +36,17 @@ class ViewController: UIViewController {
         startNewGame();
     }
 
+
     
     private func startNewGame() {
         newGameButton.isHidden = true;
         activityIndicator.isHidden = false;
         
+
+        scoreLabel.text = "0 / 10";
+
         questionView.style = .standard;
+
         questionView.title = "Loading...";
         incorrectLabel.text = "0"
         
@@ -78,6 +86,7 @@ class ViewController: UIViewController {
         startNewGame();
     }
     
+
     @objc func dragQuestionView(_ sender: UIPanGestureRecognizer) {
         if game.state == .ongoing {
             switch sender.state {
@@ -120,7 +129,7 @@ class ViewController: UIViewController {
                 break;
         }
         scoreIncorrect = game.incorrectAnswer
-      
+        scoreLabel.text = "\(game.score) / 10"
         let screenWidth = UIScreen.main.bounds.width;
         
         var translationTransform: CGAffineTransform;
@@ -138,6 +147,7 @@ class ViewController: UIViewController {
                 self.showQuestionView();
             }
         });
+
 
     }
     
