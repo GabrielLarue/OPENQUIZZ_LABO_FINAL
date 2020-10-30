@@ -14,10 +14,12 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var questionView: QuestionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     private func startNewGame() {
         activityIndicator.isHidden = false;
         
+        scoreLabel.text = "0 / 10";
         questionView.title = "Loading...";
         
         QuestionManager.shared.get { (success, newGameData) in
@@ -47,6 +49,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         startNewGame();
+    }
+    
+    private func answerQuestion() {
+        scoreLabel.text = "\(game.score) / 10"
     }
     
     private func showQuestionView() {
