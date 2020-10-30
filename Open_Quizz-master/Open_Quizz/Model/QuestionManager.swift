@@ -16,6 +16,26 @@ class QuestionManager {
 
     static let shared = QuestionManager()
     private init() {}
+
+    private func getImage(completionHandler: @escaping (Data?) -> Void) {
+        let session = URLSession(configuration: .default)
+        task?.cancel()
+        task = session.dataTask(with: imageUrl) { (data, response, error) in
+            DispatchQueue.main.async {
+                guard let imageData = data, error == nil else {
+                    completionHandler(Data())
+                    return
+                }
+                
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                    completionHandler(Data())
+                    return
+                }
+                completionHandler(imageData)
+            }
+        }
+        task?.resume()
+    }
     
     func get(callback: @escaping (Bool, NewGameData?) -> ()) {
         task?.cancel()
@@ -26,11 +46,18 @@ class QuestionManager {
             }
             DispatchQueue.main.async {
                 let questionData = self.parse(data: data)
-                let newGameData = NewGameData(questions: questionData)
+                self.getImage{ (data) in
+                guard let imageData = data, error == nil else {
+                    callback(false, nil)
+                    return
+                }
+                let newGameData = NewGameData(questions: questionData, imageData: imageData)
                     callback(true, newGameData)
                 }
+                
             }
-            task?.resume()
+        }
+        task?.resume()
     }
 
     private func parse(data: Data?) -> [Question] {

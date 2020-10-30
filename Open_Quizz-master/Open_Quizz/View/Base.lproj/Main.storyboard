@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -65,10 +66,25 @@
                                     <outlet property="label" destination="jWi-Ao-Mhj" id="q1I-TI-fGW"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ske-tD-TS2">
+                                <rect key="frame" x="129" y="42" width="117" height="46"/>
+                                <color key="backgroundColor" red="0.78419637679999998" green="0.92580538990000005" blue="0.62912029030000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="117" id="1Hm-WB-XsQ"/>
+                                    <constraint firstAttribute="height" constant="46" id="jRM-n0-2br"/>
+                                </constraints>
+                                <state key="normal" title="New Game">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapNewGame" destination="BYZ-38-t0r" eventType="touchUpInside" id="txH-cg-gMj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rAv-0b-a0n"/>
                         <color key="backgroundColor" red="0.3417147398" green="0.41966140270000002" blue="0.50811702010000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ske-tD-TS2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7pG-Hm-C8F"/>
                             <constraint firstItem="Uex-6d-wLd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8l7-Kz-3xT"/>
                             <constraint firstItem="zqO-TY-dE8" firstAttribute="centerX" secondItem="rAv-0b-a0n" secondAttribute="centerX" id="Cfg-tT-nkJ">
                                 <variation key="heightClass=compact" constant="-130"/>
@@ -77,6 +93,7 @@
                                 <variation key="heightClass=regular-widthClass=regular" constant="40"/>
                             </constraint>
                             <constraint firstItem="Uex-6d-wLd" firstAttribute="centerX" secondItem="rAv-0b-a0n" secondAttribute="centerX" constant="100" id="VVS-s1-6MU"/>
+                            <constraint firstItem="ske-tD-TS2" firstAttribute="top" secondItem="rAv-0b-a0n" secondAttribute="top" constant="42" id="gkv-K3-b6Q"/>
                             <constraint firstItem="zqO-TY-dE8" firstAttribute="top" secondItem="rAv-0b-a0n" secondAttribute="top" constant="42" id="nbq-PX-9z4">
                                 <variation key="heightClass=compact" constant="87"/>
                                 <variation key="heightClass=regular-widthClass=regular" constant="65"/>
@@ -99,12 +116,18 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="zqO-TY-dE8" id="uRO-Tp-yDI"/>
+                        <outlet property="newGameButton" destination="ske-tD-TS2" id="aRK-8E-lfO"/>
                         <outlet property="questionView" destination="Uex-6d-wLd" id="V5W-6j-D0K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139.13043478260872" y="104.46428571428571"/>
+            <point key="canvasLocation" x="138.40000000000001" y="103.89805097451276"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

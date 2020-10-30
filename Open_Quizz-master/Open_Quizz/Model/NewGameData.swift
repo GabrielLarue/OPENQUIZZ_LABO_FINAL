@@ -10,4 +10,6 @@ import Foundation
 
 struct NewGameData {
     let questions: [Question]?
+    let imageData: Data?
 }
+

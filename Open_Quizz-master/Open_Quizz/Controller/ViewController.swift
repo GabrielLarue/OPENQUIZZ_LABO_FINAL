@@ -14,8 +14,14 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var questionView: QuestionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var newGameButton: UIButton!
+    
+    @IBAction func didTapNewGame() {
+        startNewGame();
+    }
     
     private func startNewGame() {
+        newGameButton.isHidden = true;
         activityIndicator.isHidden = false;
         
         questionView.title = "Loading...";
@@ -34,7 +40,11 @@ class ViewController: UIViewController {
     func update(newGameData: NewGameData){
         game.questions = newGameData.questions!;
         game.state = .ongoing
+        newGameButton.setBackgroundImage(UIImage(data: newGameData.imageData!), for: .normal)
         activityIndicator.isHidden = true
+        newGameButton.isHidden = false;
+        
+        print(newGameData.imageData!)
         
         guard game.currentQuestion != nil else {
             questionView.title = "Erreur, questions introuvables!"

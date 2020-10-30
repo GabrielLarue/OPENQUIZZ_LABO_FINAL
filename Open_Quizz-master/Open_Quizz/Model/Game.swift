@@ -17,6 +17,7 @@ class Game{
     var questions: [Question] = [];
     var state: State = .ongoing;
     private var currentIndex: Int = 0;
+    var imageData: Data?;
     var currentQuestion: Question? {
         get {
             guard currentIndex < questions.count else {
