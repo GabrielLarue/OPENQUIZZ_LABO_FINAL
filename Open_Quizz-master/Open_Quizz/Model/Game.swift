@@ -18,6 +18,7 @@ class Game{
     var incorrectAnswer: Int = 0;
     var state: State = .ongoing;
     private var currentIndex: Int = 0;
+    var imageData: Data?;
     var currentQuestion: Question? {
         get {
             guard currentIndex < questions.count else {
@@ -39,6 +40,7 @@ class Game{
     }
     
     func refresh(){
+        incorrectAnswer = 0;
         state = .over;
         currentIndex = 0;
         }
