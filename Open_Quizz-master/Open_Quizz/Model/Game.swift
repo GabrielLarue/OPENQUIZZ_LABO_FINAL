@@ -15,6 +15,7 @@ class Game{
     }
     
     var questions: [Question] = [];
+    var incorrectAnswer: Int = 0;
     var state: State = .ongoing;
     private var currentIndex: Int = 0;
     var currentQuestion: Question? {
@@ -26,6 +27,16 @@ class Game{
         }
     };
     
+    func answerCurrentQuestion(with answer : Bool){
+        if(currentQuestion!.isCorrect != answer){
+            incorrectAnswer += 1;
+        }
+        if(currentIndex < questions.count - 1){
+            currentIndex += 1;
+        }else{
+            state = .over;
+        }
+    }
     
     func refresh(){
         state = .over;

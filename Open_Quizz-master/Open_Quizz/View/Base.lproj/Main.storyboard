@@ -65,18 +65,42 @@
                                     <outlet property="label" destination="jWi-Ao-Mhj" id="q1I-TI-fGW"/>
                                 </connections>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBR-ol-fW3">
+                                <rect key="frame" x="223" y="604" width="30" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="6k1-dl-HbS"/>
+                                    <constraint firstAttribute="height" constant="21" id="s5d-9n-Oto"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incorrect :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8YA-PE-Rtq">
+                                <rect key="frame" x="137" y="603" width="78" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="78" id="3aq-j0-1VL"/>
+                                    <constraint firstAttribute="height" constant="21" id="kIl-HU-kpH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rAv-0b-a0n"/>
                         <color key="backgroundColor" red="0.3417147398" green="0.41966140270000002" blue="0.50811702010000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Uex-6d-wLd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8l7-Kz-3xT"/>
+                            <constraint firstItem="8YA-PE-Rtq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="280" id="9lt-T7-NvQ"/>
+                            <constraint firstItem="JBR-ol-fW3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="281" id="BZp-uS-YcM"/>
                             <constraint firstItem="zqO-TY-dE8" firstAttribute="centerX" secondItem="rAv-0b-a0n" secondAttribute="centerX" id="Cfg-tT-nkJ">
                                 <variation key="heightClass=compact" constant="-130"/>
                             </constraint>
                             <constraint firstItem="Uex-6d-wLd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="K6P-Lo-rYa">
                                 <variation key="heightClass=regular-widthClass=regular" constant="40"/>
                             </constraint>
+                            <constraint firstItem="JBR-ol-fW3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="50.5" id="POn-CL-zQU"/>
                             <constraint firstItem="Uex-6d-wLd" firstAttribute="centerX" secondItem="rAv-0b-a0n" secondAttribute="centerX" constant="100" id="VVS-s1-6MU"/>
+                            <constraint firstItem="8YA-PE-Rtq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-11.5" id="bXf-dR-9Ye"/>
                             <constraint firstItem="zqO-TY-dE8" firstAttribute="top" secondItem="rAv-0b-a0n" secondAttribute="top" constant="42" id="nbq-PX-9z4">
                                 <variation key="heightClass=compact" constant="87"/>
                                 <variation key="heightClass=regular-widthClass=regular" constant="65"/>
@@ -99,6 +123,7 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="zqO-TY-dE8" id="uRO-Tp-yDI"/>
+                        <outlet property="incorrectLabel" destination="JBR-ol-fW3" id="YKW-Bt-rhT"/>
                         <outlet property="questionView" destination="Uex-6d-wLd" id="V5W-6j-D0K"/>
                     </connections>
                 </viewController>

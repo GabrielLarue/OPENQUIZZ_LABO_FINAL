@@ -14,11 +14,26 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var questionView: QuestionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var incorrectLabel: UILabel!
+    
+    var scoreIncorrect: Int = 0 {
+        didSet{
+            if(oldValue != scoreIncorrect) {
+                modifLabelIncorrect()
+            }
+        }
+    };
+    
+    private func answerQuestion() {
+        scoreIncorrect = game.incorrectAnswer;
+    }
+
     
     private func startNewGame() {
         activityIndicator.isHidden = false;
         
         questionView.title = "Loading...";
+        incorrectLabel.text = "0"
         
         QuestionManager.shared.get { (success, newGameData) in
         if success, let newGameData = newGameData {
@@ -69,5 +84,13 @@ class ViewController: UIViewController {
         }, completion:nil)
     }
 
+    private func modifLabelIncorrect(){
+        incorrectLabel.text = "\(game.incorrectAnswer)";
+        incorrectLabel.transform = CGAffineTransform(scaleX: 3.5, y: 3.5);
+        UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+            self.incorrectLabel.transform = .identity;
+        }, completion:nil)
+    }
+    
 }
 
