@@ -16,8 +16,10 @@ class Game{
     
     var score: Int = 0;
     var questions: [Question] = [];
+    var incorrectAnswer: Int = 0;
     var state: State = .ongoing;
     private var currentIndex: Int = 0;
+    var imageData: Data?;
     var currentQuestion: Question? {
         get {
             guard currentIndex < questions.count else {
@@ -28,13 +30,23 @@ class Game{
     };
     
     func answerCurrentQuestion(with answer : Bool){
+
         if(currentQuestion!.isCorrect == answer){
             score += 1;
+        }else {
+          incorrectAnswer += 1;
+        }
+    
+        if(currentIndex < questions.count - 1){
+            currentIndex += 1;
+        }else{
+            state = .over;
         }
     }
-    
-    
+
     func refresh(){
+        score = 0;
+        incorrectAnswer = 0;
         state = .over;
         currentIndex = 0;
         }
