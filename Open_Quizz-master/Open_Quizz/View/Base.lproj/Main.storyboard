@@ -49,6 +49,10 @@
                                             <fontDescription key="fontDescription" name="Balham" family="Balham" pointSize="40"/>
                                         </variation>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icon Correct" translatesAutoresizingMaskIntoConstraints="NO" id="xuD-Zu-x2V">
+                                        <rect key="frame" x="76" y="189" width="92" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.74827021360000001" green="0.76917630429999995" blue="0.78940355780000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -62,6 +66,7 @@
                                     </constraint>
                                 </constraints>
                                 <connections>
+                                    <outlet property="icon" destination="xuD-Zu-x2V" id="MGW-IF-D5d"/>
                                     <outlet property="label" destination="jWi-Ao-Mhj" id="q1I-TI-fGW"/>
                                 </connections>
                             </view>
@@ -104,7 +109,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139.13043478260872" y="104.46428571428571"/>
+            <point key="canvasLocation" x="138.40000000000001" y="103.89805097451276"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Icon Correct" width="36" height="35"/>
+    </resources>
 </document>
