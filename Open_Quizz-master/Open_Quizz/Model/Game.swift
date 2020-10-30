@@ -26,6 +26,13 @@ class Game{
         }
     };
     
+    func answerCurrentQuestion(with answer : Bool){
+        if(currentIndex < questions.count - 1){
+            currentIndex += 1;
+        }else{
+            state = .over;
+        }
+    }
     
     func refresh(){
         state = .over;
